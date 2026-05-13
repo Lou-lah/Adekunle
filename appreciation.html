@@ -8,8 +8,10 @@
 
   <title>Appreciation</title>
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -23,6 +25,8 @@
       font-family:'Poppins', sans-serif;
       scroll-behavior:smooth;
     }
+
+    /* FADE ANIMATION */
 
     .fade{
       opacity:0;
@@ -41,47 +45,70 @@
 
 <body class="bg-purple-950 text-white overflow-x-hidden">
 
-     <div class="absolute top-6 left-6 z-20">
+  <!-- BACK BUTTON -->
 
-        <a href="memories_gallery.html"
-        class="inline-flex items-center gap-2 px-4 py-2 text-purple-400 hover:text-purple-300 transition" aria-label="Go back">
+  <div class="absolute top-6 left-6 z-20">
 
-        <!-- SVG BACK ICON -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="left-arrow" class="h-6 w-6 text-purple-400" fill="currentColor">
-            <path d="M11.3,12l3.5-3.5c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-4.2,4.2l0,0c-0.4,0.4-0.4,1,0,1.4l4.2,4.2
-            c0.2,0.2,0.4,0.3,0.7,0.3l0,0c0.3,0,0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L11.3,12z"/>
-        </svg>
+    <a href="memories_gallery.html"
+      class="inline-flex items-center gap-2 px-4 py-2 text-purple-400 hover:text-purple-300 transition duration-300"
+      aria-label="Go back">
 
-        </a>
+      <!-- SVG ICON -->
+
+      <svg xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="w-8 h-8"
+        fill="currentColor">
+
+        <path d="M11.3,12l3.5-3.5c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-4.2,4.2l0,0
+        c-0.4,0.4-0.4,1,0,1.4l4.2,4.2c0.2,0.2,0.4,0.3,0.7,0.3l0,0c0.3,0,0.5-0.1,0.7-0.3
+        c0.4-0.4,0.4-1,0-1.4L11.3,12z"/>
+
+      </svg>
+
+    </a>
+
+  </div>
+
+  <!-- HERO SECTION -->
+
+  <section class="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+
+    <!-- BACKGROUND IMAGE -->
+    <img src="Images/WhatsApp Image 2026-05-13 at 11.08.45 AM (1).jpeg"
+      class="absolute w-full h-full object-cover blur-sm scale-110 opacity-70">
+
+
+    
+    <!-- CONTENT -->
+
+    <div class="relative z-10">
+
+      <h1 class="text-6xl md:text-8xl font-bold mb-8 fade show">
+        You Inspire 
+      </h1>
+
+      <p class="text-gray-300 text-lg max-w-2xl leading-9 fade show">
+
+        There are so many things about you
+        that deserves to be celebrated.
+
+      </p>
 
     </div>
-
-
-  <!-- HERO -->
-
-  <section class="h-screen flex flex-col justify-center items-center text-center px-6">
-
-    <h1 class="text-6xl md:text-8xl font-bold mb-8 fade">
-      You Inspire Me
-    </h1>
-
-    <p class="text-gray-400 text-lg max-w-2xl leading-9 fade">
-
-      There are so many things about you that deserve to be celebrated.
-
-    </p>
 
   </section>
 
   <!-- CARD SECTION -->
 
-  <section class="min-h-screen flex flex-col justify-center items-center px-6 py-20">
+  <section class="min-h-screen flex flex-col justify-center items-center px-6 py-24">
+
 
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl">
 
       <!-- CARD 1 -->
 
-      <div class="bg-[#111] p-10 rounded-3xl border border-gray-800 fade">
+      <div class="bg-[#111]/80 backdrop-blur-md p-10 rounded-3xl border border-gray-800 fade hover:scale-[1.02] transition duration-300">
 
         <h2 class="text-3xl font-semibold mb-6">
           Your Ambition
@@ -89,8 +116,9 @@
 
         <p class="text-gray-400 leading-8">
 
-          I admire how determined you are to build something meaningful and
-          create a future for yourself.
+          I admire how determined you are
+          to build something meaningful
+          and create a future for yourself.
 
         </p>
 
@@ -98,7 +126,7 @@
 
       <!-- CARD 2 -->
 
-      <div class="bg-[#111] p-10 rounded-3xl border border-gray-800 fade">
+      <div class="bg-[#111]/80 backdrop-blur-md p-10 rounded-3xl border border-gray-800 fade hover:scale-[1.02] transition duration-300">
 
         <h2 class="text-3xl font-semibold mb-6">
           Your Mindset
@@ -106,8 +134,9 @@
 
         <p class="text-gray-400 leading-8">
 
-          You continue to grow, learn, and push yourself even when things
-          aren’t easy.
+          You continue to grow, learn,
+          and push yourself even when
+          things are difficult.
 
         </p>
 
@@ -115,7 +144,7 @@
 
       <!-- CARD 3 -->
 
-      <div class="bg-[#111] p-10 rounded-3xl border border-gray-800 fade">
+      <div class="bg-[#111]/80 backdrop-blur-md p-10 rounded-3xl border border-gray-800 fade hover:scale-[1.02] transition duration-300">
 
         <h2 class="text-3xl font-semibold mb-6">
           Your Creativity
@@ -123,7 +152,9 @@
 
         <p class="text-gray-400 leading-8">
 
-          The ideas you have and the vision you carry deserve to be seen by the world.
+          The vision you carry and
+          the ideas you create deserve
+          to be seen by the world.
 
         </p>
 
@@ -131,7 +162,7 @@
 
       <!-- CARD 4 -->
 
-      <div class="bg-[#111] p-10 rounded-3xl border border-gray-800 fade">
+      <div class="bg-[#111]/80 backdrop-blur-md p-10 rounded-3xl border border-gray-800 fade hover:scale-[1.02] transition duration-300">
 
         <h2 class="text-3xl font-semibold mb-6">
           Your Future
@@ -139,7 +170,8 @@
 
         <p class="text-gray-400 leading-8">
 
-          I truly believe this is only the beginning for you.
+          I truly believe this is only
+          the beginning for you.
 
         </p>
 
@@ -147,41 +179,63 @@
 
     </div>
 
-  </section>
+  </section> 
 
   <!-- TRANSITION SECTION -->
 
-  <section class="h-screen flex flex-col justify-center items-center text-center px-6">
+  <section class="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
 
-    <h2 class="text-5xl md:text-7xl font-bold mb-8 fade">
-      And I Wanted To Show You Something...
-    </h2>
+    <!-- BACKGROUND IMAGE -->
 
-    <p class="text-gray-500 text-lg mb-10 fade">
-
-      Something connected to your dream.
-
-    </p>
-
-    <button
-      id="revealBtn"
-      class="bg-white text-black px-10 py-5 rounded-full hover:scale-105 transition duration-300 fade"
+    <img
+      src="Images/RP LOGO.jpeg"
+      class="absolute w-full h-full object-cover blur-sm scale-110 opacity-40"
     >
-      Continue →
-    </button>
+
+    <!-- OVERLAY -->
+
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- CONTENT -->
+
+    <div class="relative z-10">
+
+      <h2 class="text-5xl md:text-7xl font-bold mb-8 fade">
+        And I Wanted To Show You Something...
+      </h2>
+
+      <p class="text-gray-400 text-lg mb-10 fade">
+
+        Something connected to one of your dreams.
+
+      </p>
+
+      <button
+        id="revealBtn"
+        class="bg-white text-black px-10 py-5 rounded-full hover:scale-105 transition duration-300 fade">
+
+        Continue 
+
+      </button>
+
+    </div>
 
   </section>
 
-  <script src="../js/unlock.js"></script>
+  <!-- UNLOCK SCRIPT -->
+
+  <script src="../unlock.js"></script>
 
   <script>
 
     // LOCK CHECK
+
     if (!isUnlocked("appreciation")) {
       showLockedScreen("appreciation");
     }
 
-    // ANIMATION
+    // FADE ANIMATION OBSERVER
+
     const observer = new IntersectionObserver((entries) => {
 
       entries.forEach((entry) => {
@@ -194,11 +248,22 @@
 
     });
 
+    // OBSERVE ALL FADE ELEMENTS
+
     document.querySelectorAll(".fade").forEach((el) => {
+
       observer.observe(el);
+
+      // SHOW ELEMENTS ALREADY IN VIEW
+
+      if(el.getBoundingClientRect().top < window.innerHeight){
+        el.classList.add("show");
+      }
+
     });
 
-    // BUTTON
+    // BUTTON NAVIGATION
+
     const revealBtn = document.getElementById("revealBtn");
 
     revealBtn.addEventListener("click", () => {
