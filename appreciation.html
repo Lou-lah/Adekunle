@@ -47,22 +47,23 @@
 
   <!-- BACK BUTTON -->
 
-  <div class="absolute top-6 left-6 z-20">
+  <div class="fixed top-6 left-6 z-50">
 
     <a href="memories_gallery.html"
-      class="inline-flex items-center gap-2 px-4 py-2 text-purple-400 hover:text-purple-300 transition duration-300"
-      aria-label="Go back">
-
-      <!-- SVG ICON -->
+      class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-black/40 backdrop-blur-md border border-purple-500/30 hover:scale-110 transition duration-300">
 
       <svg xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8 text-purple-400"
+        fill="none"
         viewBox="0 0 24 24"
-        class="w-8 h-8"
-        fill="currentColor">
+        stroke="currentColor"
+        stroke-width="3">
 
-        <path d="M11.3,12l3.5-3.5c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-4.2,4.2l0,0
-        c-0.4,0.4-0.4,1,0,1.4l4.2,4.2c0.2,0.2,0.4,0.3,0.7,0.3l0,0c0.3,0,0.5-0.1,0.7-0.3
-        c0.4-0.4,0.4-1,0-1.4L11.3,12z"/>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 19l-7-7 7-7"
+        />
 
       </svg>
 
@@ -185,14 +186,7 @@
 
   <section class="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
 
-    <!-- BACKGROUND IMAGE -->
-
-    <img
-      src="Images/RP LOGO.jpeg"
-      class="absolute w-full h-full object-cover blur-sm scale-110 opacity-40"
-    >
-
-    <!-- OVERLAY -->
+       <!-- OVERLAY -->
 
     <div class="absolute inset-0 bg-black/40"></div>
 
