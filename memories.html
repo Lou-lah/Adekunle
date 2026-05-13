@@ -21,7 +21,13 @@
 
   <style>
 
-    body{
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    body {
       font-family:'Poppins', sans-serif;
       scroll-behavior:smooth;
     }
@@ -34,76 +40,102 @@
 
   <!-- HERO SECTION -->
 
- <section class="relative h-screen overflow-hidden">
+  <section class="relative h-screen overflow-hidden">
 
-  <!-- Background Image -->
-  <img src="Images/WhatsApp Image 2026-05-13 at 11.08.45 AM.jpeg"
-    class="absolute w-full h-full object-cover blur-sm scale-110 opacity-70"
-  >
+    <!-- Background Image -->
+    <img src="Images/WhatsApp Image 2026-05-13 at 11.08.45 AM.jpeg"
+      class="absolute w-full h-full object-cover blur-sm scale-110 opacity-70"
+    >
 
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+    <!-- Content -->
+    <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
 
-    <h1 class="text-6xl font-bold mb-6">
-      Our Memories ❤️
-    </h1>
+      <h1 class="text-6xl font-bold mb-6">
+        Our Memories ❤️
+      </h1>
 
-    <p class="text-gray-300 max-w-2xl text-lg">
-      Every moment with you became a memory I never want to lose.
-    </p>
+      <p class="text-gray-300 max-w-2xl text-lg">
+        Every moment with you becomes a memory I never want to lose.
+      </p>
 
-  </div>
+    </div>
 
-</section>
+  </section>
 
-  <!-- MEMORY INTRO SECTION -->
+  <section class="min-h-screen relative overflow-hidden px-6 py-24 md:py-32">
 
-  <!-- EVERY MEMORY MATTERS -->
+    <div class="absolute inset-0 md:hidden">
+      <div class="relative w-full h-full">
+        <video
+          id="heroVideoMobileA"
+          src="Images/Videos/video1.mp4"
+          autoplay muted playsinline
+          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+        ></video>
 
-<section class="relative min-h-screen flex justify-center items-center overflow-hidden px-6">
+        <video
+          id="heroVideoMobileB"
+          src=""
+          muted playsinline
+          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+        ></video>
+      </div>
 
-  <!-- BACKGROUND IMAGE -->
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
 
- <video id="bgVideo" autoplay muted playsinline>
-  <source id="videoSource" src="Videos/video1.mp4" type="video/mp4">
-</video>
+    <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
 
-  <!-- DARK OVERLAY -->
+      <div class="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left space-y-6">
+        <span class="text-sm uppercase tracking-[0.4em] text-pink-300">Our Story</span>
 
-  <div class="absolute inset-0 bg-black/40"></div>
+        <h2 class="text-4xl md:text-6xl font-bold leading-tight">
+          Every Memory
+          <br>
+          Matters.
+        </h2>
 
-  <!-- CONTENT -->
+        <p class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto md:mx-0">
+          From random conversations to unforgettable moments,
+          every little moment with you became something special to me.
+        </p>
 
-  <div class="relative z-10 max-w-4xl text-center">
+        <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto md:mx-0">
+          Memories fade away with time,
+          but the ones created together are forever embedded in my heart.
+        </p>
+      </div>
 
-    <h2 class="text-5xl md:text-7xl font-bold mb-10 leading-tight">
+      <div class="w-full md:w-1/2 hidden md:block relative">
+        <div class="aspect-[16/9] md:aspect-[16/10] max-h-[36rem] overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/10 bg-black">
+          <div class="relative w-full h-full">
+            <video
+              id="heroVideoDesktopA"
+              src="Images/Videos/video1.mp4"
+              autoplay
+              muted
+              playsinline
+              class="absolute inset-0 w-full h-full object-cover rounded-[2rem] transition-opacity duration-1000 opacity-100"
+            ></video>
 
-      Every Memory
-      <br>
-      Matters.
+            <video
+              id="heroVideoDesktopB"
+              src=""
+              muted
+              playsinline
+              class="absolute inset-0 w-full h-full object-cover rounded-[2rem] transition-opacity duration-1000 opacity-0"
+            ></video>
+          </div>
+          <div class="absolute inset-0 rounded-[2rem] bg-black/20"></div>
+        </div>
+      </div>
 
-    </h2>
+    </div>
 
-    <p class="text-gray-300 text-lg md:text-xl leading-10 mb-8">
-
-      From random conversations to unforgettable moments,
-      every little moment with you became something special to me.
-
-    </p>
-
-    <p class="text-gray-300 text-lg leading-9 max-w-3xl mx-auto">
-
-      Memories may fade away with time,
-      but the ones we created together are forever.
-
-    </p>
-
-  </div>
-
-</section>
+  </section>
 
   <!-- TRANSITION SECTION -->
 
@@ -113,7 +145,7 @@
       There’s More I Want You To See
     </h2>
 
-    <p class="text-gray-300 text-lg max-w-2xl mb-10">
+    <p class="text-gray-400 text-lg max-w-2xl mb-10">
 
       Some of my favorite moments with you deserve their own space.
 
@@ -129,65 +161,100 @@
   </section>
 
   <!-- UNLOCK SCRIPT -->
-  <script src="../js/unlock.js"></script>
+  <script src="./unlock.js"></script>
 
   <script>
 
-  // LOCK CHECK
-  if (!isUnlocked("memories")) {
-    showLockedScreen("memories");
-  }
-
-  // BUTTON NAVIGATION
-  const galleryBtn = document.getElementById("galleryBtn");
-
-  galleryBtn.addEventListener("click", () => {
-    window.location.href = "./memory-gallery.html";
-  });
-
-  // ---------------------------
-  // VIDEO PLAYLIST BACKGROUND
-  // ---------------------------
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const videos = [
-    "Videos/video1.mp4",
-    "Videos/video2.mp4",
-    "Videos/video3.mp4"
-  ];
-
-  let currentIndex = 0;
-
-  const video = document.getElementById("bgVideo");
-  const source = document.getElementById("videoSource");
-
-  if (!video || !source) return;
-
-  function playVideo(index) {
-    source.src = videos[index];
-    video.load();
-
-    video.play().catch(err => {
-      console.log("Play blocked:", err);
-    });
-  }
-
-  video.addEventListener("ended", () => {
-
-    currentIndex++;
-
-    if (currentIndex >= videos.length) {
-      currentIndex = 0;
+    // LOCK CHECK
+    if (!isUnlocked("memories")) {
+      showLockedScreen("memories");
     }
 
-    playVideo(currentIndex);
+    // BUTTON NAVIGATION
+    const galleryBtn = document.getElementById("galleryBtn");
 
-  });
+    galleryBtn.addEventListener("click", () => {
 
-});
+      window.location.href = "./memory-gallery.html";
 
-</script>
+    });
+
+    // PLAY TWO VIDEOS WITH FADE TRANSITION
+    const videoSources = [
+      "Images/Videos/video1.mp4",
+      "Images/Videos/video2.mp4"
+    ];
+
+    const desktopVideos = [
+      document.getElementById("heroVideoDesktopA"),
+      document.getElementById("heroVideoDesktopB")
+    ];
+    const mobileVideos = [
+      document.getElementById("heroVideoMobileA"),
+      document.getElementById("heroVideoMobileB")
+    ];
+
+    let currentVideoIndex = 0;
+    let currentSlot = 0;
+
+    const isDesktopMode = () => window.matchMedia("(min-width: 768px)").matches;
+    const activeVideos = () => (isDesktopMode() ? desktopVideos : mobileVideos);
+
+    function getActiveVideos(videos) {
+      return videos[currentSlot];
+    }
+
+    function getInactiveVideos(videos) {
+      return videos[1 - currentSlot];
+    }
+
+    function crossfadeToNextVideo(nextIndex) {
+      const videos = activeVideos();
+      const active = getActiveVideos(videos);
+      const inactive = getInactiveVideos(videos);
+
+      inactive.src = videoSources[nextIndex];
+      inactive.currentTime = 0;
+
+      inactive.play().catch(() => {}).finally(() => {
+        requestAnimationFrame(() => {
+          inactive.style.opacity = "1";
+          active.style.opacity = "0";
+          currentSlot = 1 - currentSlot;
+        });
+      });
+    }
+
+    function onVideoEnded() {
+      const nextIndex = (currentVideoIndex + 1) % videoSources.length;
+      crossfadeToNextVideo(nextIndex);
+      currentVideoIndex = nextIndex;
+    }
+
+    activeVideos().forEach((video) => {
+      if (video) {
+        video.removeAttribute("loop");
+        video.addEventListener("ended", onVideoEnded);
+      }
+    });
+
+    // Ensure the hidden slot is blank until next transition
+    const hiddenDesktop = getInactiveVideos(desktopVideos);
+    const hiddenMobile = getInactiveVideos(mobileVideos);
+    if (hiddenDesktop) {
+      hiddenDesktop.src = "";
+    }
+    if (hiddenMobile) {
+      hiddenMobile.src = "";
+    }
+
+    const initialGroup = activeVideos();
+    const initialVideo = getActiveVideos(initialGroup);
+    if (initialVideo) {
+      initialVideo.play().catch(() => {});
+    }
+
+  </script>
 
 </body>
 
