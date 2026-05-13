@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Memory Gallery of us</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h6.text-gray-100 {
+        color: #b903b9!important;
+    }
+  </style>
+
+</head>
+
+<body class="bg-purple-950 text-white overflow-x-hidden">
+    <div class="absolute top-6 left-6 z-20">
+
+    <a href="memories.html"
+      class="inline-flex items-center gap-2 px-4 py-2 text-purple-400 hover:text-purple-300 transition" aria-label="Go back">
+
+      <!-- SVG BACK ICON -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="left-arrow" class="h-6 w-6 text-purple-400" fill="currentColor">
+        <path d="M11.3,12l3.5-3.5c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-4.2,4.2l0,0c-0.4,0.4-0.4,1,0,1.4l4.2,4.2
+          c0.2,0.2,0.4,0.3,0.7,0.3l0,0c0.3,0,0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L11.3,12z"/>
+      </svg>
+
+    </a>
+
+  </div>
+
+<!-- HERO -->
+<section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+
+  <img src="Videos/video1.mp4"
+       class="absolute w-full h-full object-cover blur-sm scale-110 opacity-40">
+
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative z-10 px-6">
+
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+      Some Moments I Can’t Forget ❤️
+    </h1>
+
+    <p class="text-gray-300 max-w-2xl mx-auto">
+      Each picture and video tells a story we’ll always remember.
+    </p>
+    
+  </div>
+
+</section>
+
+<!-- IMAGE GRID -->
+<section class="py-24 px-6">
+
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+
+    <!-- IMAGE 1 -->
+    <div class="relative rounded-3xl overflow-hidden">
+      <img src="Images/you and i.jpeg"
+           class="w-full h-[500px] object-cover hover:scale-105 transition duration-500">
+
+      <div class="absolute bottom-0 w-full bg-black/50 backdrop-blur-md p-6">
+        One of my favorite moments of us together ❤️
+        <h6 class="text-gray-100">I pray your smile never fades</h6>
+      </div>
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="relative rounded-3xl overflow-hidden">
+      <img src="Images/you and i 2.jpeg"
+           class="w-full h-[500px] object-cover hover:scale-105 transition duration-500">
+
+      <div class="absolute bottom-0 w-full bg-black/50 backdrop-blur-md p-6">
+        A memory I’ll never forget ❤️
+        <h6 class="text-gray-100">Our First Picture together</h6>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- VIDEO SECTION -->
+<!-- VIDEO SECTION -->
+<section class="py-24 px-6 text-center bg-purple-950">
+  
+  <h2 class="text-4xl md:text-6xl font-bold mb-12">
+    Little Moments in Motion 🎥
+  </h2>
+
+  <div class="max-w-4xl mx-auto">
+    <div class="relative bg-black rounded-3xl overflow-hidden shadow-2xl">
+      <video 
+        controls 
+        class="w-full h-auto aspect-video rounded-3xl"
+        src="Images/Videos/moments.mp4">
+        <source src="Images/Videos/moments.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+</section>
+
+<!-- FULL SCREEN MEMORY -->
+<section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+
+  <img src="Images/us2.jpeg"
+       class="absolute w-full h-full object-cover">
+
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative z-10 px-6">
+
+    <h2 class="text-5xl md:text-7xl font-bold mb-6">
+      Us ❤️
+    </h2>
+
+    <p class="text-gray-300 max-w-2xl mx-auto">
+      Some people become memories… you became part of my life.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- CONTINUE -->
+<section class="h-screen flex flex-col items-center justify-center text-center px-6">
+
+  <h2 class="text-4xl md:text-6xl font-bold mb-6">
+    And there’s still more…
+  </h2>
+
+  <p class="text-gray-400 max-w-2xl mb-10">
+    Because your story is just getting started.
+  </p>
+
+  <button id="continueBtn"
+    class="bg-white text-black px-10 py-5 rounded-full hover:scale-105 transition">
+    Continue →
+  </button>
+
+</section>
+
+<script>
+
+  const continueBtn = document.getElementById("continueBtn");
+
+  continueBtn.addEventListener("click", () => {
+    window.location.href = "./appreciation.html";
+  });
+
+</script>
+
+</body>
+
+</html>
