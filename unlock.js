@@ -1,10 +1,7 @@
 // Unlock schedule
 
 const unlockTimes = {
-  intro: new Date("2026-05-13T20:24:00+01:00"),
-  memories: new Date("2026-05-12T20:34:00+01:00"),
-  appreciation: new Date("2026-05-12T20:30:00+01:00"),
-  reveal: new Date("2026-05-12T20:35:00+01:00"),
+    reveal: new Date("2026-06-18T13:00:00"),
 };
 
 // Check if page is unlocked

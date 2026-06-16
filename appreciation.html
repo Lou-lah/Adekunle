@@ -39,6 +39,30 @@
       transform:translateY(0);
     }
 
+    /* Modal animations and styles */
+    #lockedModal .modal-card{
+      transform: translateY(20px) scale(.98);
+      opacity: 0;
+      transition: transform 360ms cubic-bezier(.2,.9,.2,1), opacity 280ms ease;
+      border-radius: 1rem;
+      box-shadow: 0 18px 50px rgba(16,24,40,0.6);
+    }
+
+    #lockedModal.show-modal .modal-card{
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    #lockedModal .modal-badge{
+      display:inline-flex;align-items:center;gap:8px;padding:6px 10px;background:linear-gradient(90deg,#a855f7,#f97316);color:white;border-radius:999px;font-weight:600;
+    }
+
+    #lockedModal .close-btn{
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    #lockedModal .close-btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,85,247,0.18); }
+
   </style>
 
 </head>
@@ -116,11 +140,10 @@
         </h2>
 
         <p class="text-gray-400 leading-8">
-
           I admire how determined you are
-          to build something meaningful
-          and create a future for yourself.
-
+          to build something meaningful and work steadily towards your goals to reality.<br>
+          Even when the going got tough, you continue to push forward with purpose and resilience.<br>
+          All these speaks volume about the kind of person you are and the great things you will achieve in the future.
         </p>
 
       </div>
@@ -134,11 +157,10 @@
         </h2>
 
         <p class="text-gray-400 leading-8">
-
-          You continue to grow, learn,
-          and push yourself even when
-          things are difficult.
-
+          Your mindset is one of the qualities you posses that I admire.<br>
+          You approach life and its shenanigans with the desire to learn, grow, and date i say become a better version of yourself with eaxh passing day.<br>
+          Rather than being discouraged by setbacks, you see them as opportunities to learn and improve.<br>
+          This mindset is truly inspiring and I have no doubt it will continue to lead you to great success in all your endeavors.
         </p>
 
       </div>
@@ -152,11 +174,9 @@
         </h2>
 
         <p class="text-gray-400 leading-8">
-
-          The vision you carry and
-          the ideas you create deserve
-          to be seen by the world.
-
+          You have a unique way of seeing possibilities in the unknown, your ideas reflect your creativity and originality.<br>
+          Whether it’s through your work, your style, or the way you express yourself, you have a knack for bringing fresh perspectives and innovative solutions to the table.<br>
+          
         </p>
 
       </div>
@@ -170,10 +190,9 @@
         </h2>
 
         <p class="text-gray-400 leading-8">
-
-          I truly believe this is only
-          the beginning for you.
-
+          When I think about your future, I see someone with immense potential and countless opportunities ahead.<br>
+          The ambition you posses, the mindset you have cultivates, and your creative mind that you continue to invest in are all building blocks for a future fillwed with success and impact.<br>
+          While the road ahead may not always be smooth, easy to navigate, or predictable, I have no doubt that you will face it with the same preserverance, determination, resilience, and creativity that you approach everything else with.<br>
         </p>
 
       </div>
@@ -199,9 +218,7 @@
       </h2>
 
       <p class="text-gray-400 text-lg mb-10 fade">
-
-        Something connected to one of your dreams.
-
+        Something connected to one of your dreams, something you created.
       </p>
 
       <button
@@ -216,17 +233,30 @@
 
   </section>
 
+  <!-- LOCKED MODAL (shown when Reveal is not yet available) -->
+  <div id="lockedModal" class="fixed inset-0 hidden items-center justify-center z-50">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="modal-card bg-white text-black p-6 max-w-md mx-4 z-10">
+      <div class="flex items-center justify-between mb-4">
+        <div class="modal-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-9-7.5A5.5 5.5 0 0112 3a5.5 5.5 0 019 10.5C18 16.65 12 21 12 21z" />
+          </svg>
+          <span class="ml-1">Coming Soon</span>
+        </div>
+        <button id="closeModalBtn" class="close-btn px-3 py-1 rounded text-white bg-purple-700">Close</button>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Just a lil suspense My Love</h3>
+      <p class="text-sm text-gray-700 mb-2">Ademi come back by: <span id="modalUnlockTime"></span></p>
+      <div id="modalCountdown" class="text-lg font-medium mb-4"></div>
+    </div>
+  </div>
+
   <!-- UNLOCK SCRIPT -->
 
-  <script src="../unlock.js"></script>
+  <script src="./unlock.js"></script>
 
   <script>
-
-    // LOCK CHECK
-
-    if (!isUnlocked("appreciation")) {
-      showLockedScreen("appreciation");
-    }
 
     // FADE ANIMATION OBSERVER
 
@@ -259,12 +289,65 @@
     // BUTTON NAVIGATION
 
     const revealBtn = document.getElementById("revealBtn");
+    const lockedModal = document.getElementById("lockedModal");
+    const modalUnlockTimeEl = document.getElementById("modalUnlockTime");
+    const modalCountdownEl = document.getElementById("modalCountdown");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    let modalTimer = null;
 
     revealBtn.addEventListener("click", () => {
-
-      window.location.href = "./reveal.html";
-
+      if (isUnlocked("reveal")) {
+        window.location.href = "./reveal.html";
+      } else {
+        const unlockTime = unlockTimes.reveal || new Date("2026-06-18T13:00:00");
+        showLockedModal(unlockTime);
+      }
     });
+
+    function showLockedModal(unlockTime) {
+        modalUnlockTimeEl.textContent = new Date(unlockTime).toLocaleString();
+        lockedModal.classList.remove("hidden");
+        lockedModal.classList.add("flex");
+        // small delay to trigger CSS entrance animation
+        requestAnimationFrame(() => {
+          lockedModal.classList.add("show-modal");
+        });
+        startModalCountdown(unlockTime);
+    }
+
+    function hideLockedModal() {
+      // play exit animation then hide
+      lockedModal.classList.remove("show-modal");
+      setTimeout(() => {
+        lockedModal.classList.remove("flex");
+        lockedModal.classList.add("hidden");
+      }, 380);
+      if (modalTimer) {
+        clearInterval(modalTimer);
+        modalTimer = null;
+      }
+    }
+
+    closeModalBtn.addEventListener("click", hideLockedModal);
+
+    function startModalCountdown(target) {
+      if (modalTimer) clearInterval(modalTimer);
+      function update() {
+        const now = new Date();
+        const diff = new Date(target) - now;
+        if (diff <= 0) {
+          hideLockedModal();
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        modalCountdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+      update();
+      modalTimer = setInterval(update, 1000);
+    }
 
   </script>
 
